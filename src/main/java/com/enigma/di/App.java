@@ -3,11 +3,32 @@ package com.enigma.di;
 public class App {
 
     public static void main(String[] args) {
-        Car toyota = new Car(4, "Yellow");
+        /*Car toyota = new Car(4, "Yellow");
         toyota.setColor("Black");
         toyota.setWheel(6);
         System.out.println("Ban Mobil: " + toyota.getWheel());
         System.out.println("Warna Mobil: " + toyota.getColor());
+        */
+
+        /*Rectangle rectangle = new Rectangle(10.0, 5.0);
+        Double surface = rectangle.getSurface();
+        System.out.println(surface);
+        */
+
+/*        Block block = new Block(10.5, 5.5, *//*20.0);
+        Double result = block.getSurface();
+        System.out.println(result);*/
+
+        App app = new App();
+        app.sayHello("Rifqi", "Ramadhan");
+    }
+
+    public void sayHello(String name) {
+        System.out.println(name);
+    }
+
+    public void sayHello(String firstName, String lastName) {
+        System.out.println(firstName + " " + lastName);
     }
 
     public Integer sum(Integer angka1, Integer angka2) {
