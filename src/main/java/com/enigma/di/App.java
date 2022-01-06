@@ -2,14 +2,42 @@ package com.enigma.di;
 
 import com.enigma.di.dependencyInjection.DieselEngine;
 import com.enigma.di.dependencyInjection.ElectricEngine;
-import com.enigma.di.dependencyInjection.Engine;
 import com.enigma.di.dependencyInjection.GasolineEngine;
 import com.enigma.di.oop.Car;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
     public static void main(String[] args) {
-        /*Car toyota = new Car(4, "Yellow");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("para-beans.xml");
+
+        GasolineEngine gasolineEngine = (GasolineEngine) applicationContext.getBean("gasolineEngine");
+        ElectricEngine electricEngine = (ElectricEngine) applicationContext.getBean("electricEngine");
+        DieselEngine dieselEngine = (DieselEngine) applicationContext.getBean("dieselEngine");
+
+        Car mazda = (Car) applicationContext.getBean("mazda");
+        mazda.run();
+    }
+}
+
+/* public void sayHello(String name) {
+        System.out.println(name);
+    }
+
+    public void sayHello(String firstName, String lastName) {
+        System.out.println(firstName + " " + lastName);
+    }
+
+    public Integer sum(Integer angka1, Integer angka2) {
+        Integer result = angka1 + angka2;
+        return result;
+    }
+
+    public void printName(String name) {
+        System.out.println(name);
+    }*/
+
+ /*Car toyota = new Car(4, "Yellow");
         toyota.setColor("Black");
         toyota.setWheel(6);
         System.out.println("Ban Mobil: " + toyota.getWheel());
@@ -28,33 +56,14 @@ public class App {
 /*        App app = new App();
         app.sayHello("Rifqi", "Ramadhan");*/
 
-        Engine engine = new GasolineEngine();
+        /*Engine engine = new GasolineEngine();
         GasolineEngine gasolineEngine = new GasolineEngine();
         DieselEngine dieselEngine = new DieselEngine();
         ElectricEngine electricEngine = new ElectricEngine();
 
         Car mazda = new Car(4, "Black", dieselEngine);
-        mazda.run();
-    }
+        mazda.run();*/
 
-    public void sayHello(String name) {
-        System.out.println(name);
-    }
-
-    public void sayHello(String firstName, String lastName) {
-        System.out.println(firstName + " " + lastName);
-    }
-
-    public Integer sum(Integer angka1, Integer angka2) {
-        Integer result = angka1 + angka2;
-        return result;
-    }
-
-    public void printName(String name) {
-        System.out.println(name);
-    }
-
-}
 
 //    String name = "Rifqi Ramadhan";
 //    String fullName = "M Rifqi Ramadhan";

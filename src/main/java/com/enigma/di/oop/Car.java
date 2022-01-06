@@ -21,6 +21,10 @@ public class Car {
         this.engine = engine;
     }
 
+    public Car(Engine engine) {
+        this.engine = engine;
+    }
+
     public void run() {
         engine.startEngine();
     }
