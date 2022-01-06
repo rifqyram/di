@@ -3,6 +3,7 @@ package com.enigma.di;
 import com.enigma.di.dependencyInjection.DieselEngine;
 import com.enigma.di.dependencyInjection.ElectricEngine;
 import com.enigma.di.dependencyInjection.GasolineEngine;
+import com.enigma.di.oop.AnotherCar;
 import com.enigma.di.oop.Car;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -16,8 +17,11 @@ public class App {
         ElectricEngine electricEngine = (ElectricEngine) applicationContext.getBean("electricEngine");
         DieselEngine dieselEngine = (DieselEngine) applicationContext.getBean("dieselEngine");
 
-        Car mazda = (Car) applicationContext.getBean("mazda");
-        mazda.run();
+        Car car = (Car) applicationContext.getBean("car");
+        car.run();
+
+        AnotherCar anotherCar = (AnotherCar) applicationContext.getBean("anotherCar");
+        anotherCar.run();
     }
 }
 

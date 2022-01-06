@@ -1,5 +1,8 @@
 package com.enigma.di.dependencyInjection;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GasolineEngine implements Engine {
 
     @Override

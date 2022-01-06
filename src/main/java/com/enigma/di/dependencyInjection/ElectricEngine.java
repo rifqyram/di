@@ -1,5 +1,8 @@
 package com.enigma.di.dependencyInjection;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ElectricEngine implements Engine {
 
     @Override
