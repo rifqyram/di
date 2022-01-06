@@ -1,4 +1,6 @@
-package com.enigma.di;
+package com.enigma.di.oop;
+
+import com.enigma.di.dependencyInjection.Engine;
 
 public class Car {
 
@@ -10,12 +12,17 @@ public class Car {
     * */
 
     private Integer wheel;
-
     private String color;
+    private Engine engine;
 
-    public Car(Integer wheel, String color) {
+    public Car(Integer wheel, String color, Engine engine) {
         this.wheel = wheel;
         this.color = color;
+        this.engine = engine;
+    }
+
+    public void run() {
+        engine.startEngine();
     }
 
     public Integer getWheel() {

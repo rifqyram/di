@@ -1,5 +1,11 @@
 package com.enigma.di;
 
+import com.enigma.di.dependencyInjection.DieselEngine;
+import com.enigma.di.dependencyInjection.ElectricEngine;
+import com.enigma.di.dependencyInjection.Engine;
+import com.enigma.di.dependencyInjection.GasolineEngine;
+import com.enigma.di.oop.Car;
+
 public class App {
 
     public static void main(String[] args) {
@@ -19,8 +25,16 @@ public class App {
         Double result = block.getSurface();
         System.out.println(result);*/
 
-        App app = new App();
-        app.sayHello("Rifqi", "Ramadhan");
+/*        App app = new App();
+        app.sayHello("Rifqi", "Ramadhan");*/
+
+        Engine engine = new GasolineEngine();
+        GasolineEngine gasolineEngine = new GasolineEngine();
+        DieselEngine dieselEngine = new DieselEngine();
+        ElectricEngine electricEngine = new ElectricEngine();
+
+        Car mazda = new Car(4, "Black", dieselEngine);
+        mazda.run();
     }
 
     public void sayHello(String name) {

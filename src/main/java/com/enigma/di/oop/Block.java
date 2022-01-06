@@ -1,4 +1,4 @@
-package com.enigma.di;
+package com.enigma.di.oop;
 
 public class Block extends Rectangle {
 
