@@ -27,6 +27,6 @@ public class ApplicationConfiguration {
 
     @Bean
     public Car mazda() {
-        return new Car(gasolineEngine());
+        return new Car();
     }
 }

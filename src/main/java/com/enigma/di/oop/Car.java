@@ -1,6 +1,8 @@
 package com.enigma.di.oop;
 
 import com.enigma.di.dependencyInjection.Engine;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Car {
 
@@ -13,16 +15,17 @@ public class Car {
 
     private Integer wheel;
     private String color;
+
+    @Autowired
+    @Qualifier("gasolineEngine")
     private Engine engine;
 
-    public Car(Integer wheel, String color, Engine engine) {
+    public Car(Integer wheel, String color) {
         this.wheel = wheel;
         this.color = color;
-        this.engine = engine;
     }
 
-    public Car(Engine engine) {
-        this.engine = engine;
+    public Car() {
     }
 
     public void run() {

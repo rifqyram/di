@@ -6,26 +6,20 @@ import com.enigma.di.dependencyInjection.GasolineEngine;
 import com.enigma.di.oop.Car;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
 
+        GasolineEngine gasolineEngine = (GasolineEngine) applicationContext.getBean("gasolineEngine");
+        ElectricEngine electricEngine = (ElectricEngine) applicationContext.getBean("electricEngine");
+        DieselEngine dieselEngine = (DieselEngine) applicationContext.getBean("dieselEngine");
 
-
+        Car mazda = (Car) applicationContext.getBean("mazda");
+        mazda.run();
     }
 }
-
-//    ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("para-beans.xml");
-//
-//    GasolineEngine gasolineEngine = (GasolineEngine) applicationContext.getBean("gasolineEngine");
-//    ElectricEngine electricEngine = (ElectricEngine) applicationContext.getBean("electricEngine");
-//    DieselEngine dieselEngine = (DieselEngine) applicationContext.getBean("dieselEngine");
-//
-//    Car mazda = (Car) applicationContext.getBean("mazda");
-//    mazda.run();
 
 /* public void sayHello(String name) {
         System.out.println(name);
