@@ -3,10 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="engine-beans.xml" />
-
-    <bean id="mazda" class="com.enigma.di.oop.Car" >
-        <constructor-arg name="engine" ref="gasolineEngine" />
-    </bean>
+    <bean id="gasolineEngine" class="com.enigma.di.dependencyInjection.GasolineEngine" />
+    <bean id="electricEngine" class="com.enigma.di.dependencyInjection.ElectricEngine" />
+    <bean id="dieselEngine" class="com.enigma.di.dependencyInjection.DieselEngine" />
 
 </beans>
